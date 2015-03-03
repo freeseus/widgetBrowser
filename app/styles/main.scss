@@ -1,0 +1,1140 @@
+@import 'audio';
+
+////////////////////////////////
+////* SCSS VARIABLES *//////////
+////////////////////////////////
+$ftColorPink: #fff1e0;
+$ftColorPink2: #f6e9d8;
+$ftColorPink3: #e9decf;
+$ftColorMultiRed: #c36256;
+$ftColorMultiOrange: #eda45e;
+$ftColorMultiCoffee: #94826b;
+$ftColorMultiYellow: #eed485;
+$ftColorMultiGreen: #a6a471;
+$ftColorMultiTurquoise: #819e9a;
+$ftColorMultiBlue: #75a5c2;
+$ftColorMultiPurple: #736e7e;
+$ftColorMultiEggplant: #936971;
+$ftColorMultiPlatinum: #c1b8b4;
+$ftColorWarmGrey: #a7a59b;
+$ftTextColorDark: rgba(0,0,0,.75);
+$ftTextColorLight: rgba(255,255,255,.85);
+$ftTextShadowDark: 0 1px rgba(0,0,0,.15);
+$ftTextShadowLight: 0 1px rgba(255,255,255,.15);
+
+$ftColorClaret: #9e2f50;
+$ftColorClaretFifty: #b66074;
+
+$benton: 'BentonSans', Georgia, 'Times New Roman', Times, serif !important;
+$arial: 'Arial', sans-serif !important;
+$completedColor: $ftColorMultiRed;
+$completedFontColor: #222;
+$standardFontColor: #74736c;
+$marginFromLeft: 25px;
+
+////////////////////////////////
+////* SCSS CLASSES *////////////
+////////////////////////////////
+.bodyText{
+    font-family: 'Clarion', sans-serif;
+    font-size: 12px;
+}
+
+.headerText{
+    font-family: 'BentonSans', Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.stressedText{
+    font-family: 'Clarion-Italic', sans-serif;
+    font-size: 20px;
+}
+
+.largeNumber{
+    font-family: 'BentonSansLight', 'BentonSans', Arial, Helvetica, sans-serif;
+    font-size: 42px;
+}
+
+.textShadowDark{
+    text-shadow: $ftTextShadowDark;
+}
+
+.textShadowLight{
+    text-shadow: $ftTextShadowLight;
+}
+
+.disableSelect{
+    -webkit-user-select: none;
+    -moz-user-select:none;
+    user-select: none;
+}
+
+.disableTap{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: 0;
+}
+
+.blankInput{
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.arrowDown{
+    position: relative;
+    top: 20px;
+    text-align: center;
+    padding-right: 17px;
+    pointer-events: none;
+}
+.arrowDown:after{
+   bottom: 75%;
+   border: solid transparent;
+   content: " ";
+   height: 0;
+   width: 0;
+   position: absolute;
+   border-top-color: rgba(255,255,255,.95);
+   border-width: 8px;
+}
+
+////////////////////////////////
+////* STANDARD CSS *////////////
+////////////////////////////////
+@font-face{font-family:ft-icons;src:url(http://interactivegraphics.ft-static.com/inc/fonts/icons.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/icons.ttf) format("truetype");font-style:normal;font-weight:400}@font-face{font-family:MillerDisplay;src:url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Roman.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Roman.ttf) format("truetype");font-style:normal;font-weight:400}@font-face{font-family:MillerDisplay;src:url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Bold.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Bold.ttf) format("truetype");font-style:normal;font-weight:700}@font-face{font-family:MillerDisplay;src:url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Italic.ttf) format("truetype"),url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Roman.woff) format("woff");font-style:italic;font-weight:400}@font-face{font-family:MillerDisplay;src:url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-SemiboldItal.ttf) format("truetype"),url(http://interactivegraphics.ft-static.com/inc/fonts/MillerDisplay-Bold.woff) format("woff");font-style:italic;font-weight:700}@font-face{font-family:BentonSans;src:url(http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot);src:url(http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix) format("embedded-opentype"),url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansRegular.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansRegular.ttf) format("truetype");font-style:normal;font-weight:400}@font-face{font-family:BentonSans;src:url(http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot);src:url(http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix) format("embedded-opentype"),url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansBold.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansBold.ttf) format("truetype");font-style:normal;font-weight:700}@font-face{font-family:BentonSans;src:url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansLight.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/BentonSansLight.ttf) format("truetype");font-style:normal;font-weight:lighter}@font-face{font-family:Clarion;src:url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion.ttf) format("truetype");font-style:normal;font-weight:400}@font-face{font-family:Clarion;src:url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion-Italic.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion-Italic.ttf) format("truetype");font-style:italic;font-weight:400}@font-face{font-family:Clarion;src:url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion-Bold.woff) format("woff"),url(http://interactivegraphics.ft-static.com/inc/fonts/Clarion-Bold.ttf) format("truetype");font-style:normal;font-weight:700}
+/* @font-face{font-family:graph-icons;src:url(../fonts/graphs.woff) format("woff"),url(../fonts/../fonts/graphs.ttf) format("truetype");font-style:normal;font-weight:400} */
+
+a{
+    color: #2e6e9e;
+    text-decoration: none;
+    cursor: default;
+}
+
+a:hover{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#FTi{
+    font-family: 'BentonSans', Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: $ftTextColorDark;
+    cursor: default;
+    margin: 0px;
+    padding: 0px;
+    @extend .disableSelect;
+    @extend .disableTap;
+    /* background-color: $ftColorPink; */ /* This is already written in the html file so that the background is pink even before the css is loaded */
+}
+
+#FTi .allScale{
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#FTi .fullWidth{
+    width: 972px;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#FTi .wideWidth{
+    width: 884px;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#FTi .narrowWidth{
+    width: 600px;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#FTi .titleDivider{
+    width: 100%;
+    height: 8px;
+    background: #e9decf;
+    margin-bottom: 4px;
+}
+
+#FTi .title{
+    font-family:'MillerDisplay','Clarion', Georgia, serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 2px; /* should be 6 for default interactives */
+    text-indent: 0px;
+    margin-left: 10px; /* should normally be 0 */
+}
+
+#FTi .subTitle{
+    font-size: 14px;
+    color: $standardFontColor;
+    margin-bottom: 10px;
+    text-indent: 0px;
+    margin-left: 10px; /* should normally be 0 */
+}
+
+#FTi .instructions{
+    font-family: 'BentonSans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: $standardFontColor;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    text-indent: 0px;
+}
+
+#FTi .loader{
+    position: absolute;
+    top: 48%;    
+    width: 100%;
+    height: 32px;
+    background: url(http://interactivegraphics.ft-static.com/imgs/ftLoader2013Squares.gif) no-repeat center;
+    visibility: hidden;
+    z-index: 9999;
+}
+
+#FTi #precache{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: -10000px;
+    left: -10000px;
+    overflow: hidden;
+}
+
+#FTi .loaderText{
+    position: relative;
+    top: 34px;
+    text-align: center;
+    color: $ftColorWarmGrey;
+    font-size: 12px;
+}
+
+#FTi .content{
+    padding: 0px;
+    min-width: 730px;
+    overflow: hidden;
+    margin-left: 10px; /* should normally be 0 */
+}
+
+#FTi .footer{
+    font-family: 'BentonSans', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    height: 22px;
+    left: 0px;
+    background-color: $ftColorPink;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid #d9cdbe;
+    z-index: 9999;
+    position: relative;
+}
+
+#FTi .footer #source{
+
+}
+
+#FTi .footer #credits{
+
+}
+
+/* Custom stuff below this */
+
+.iconContainer{
+    margin-left: $marginFromLeft;
+    display: table;
+}
+
+.fa{
+    font-size: 72px;
+}
+
+.icons{
+    font-size: 72px;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-shadow: 1px 1px rgba(255,255,255,.5), -1px -1px rgba(0,0,0,.05);
+    margin-bottom: 10px !important;
+    cursor: pointer;
+    border: solid 4px rgba(0,0,0,.15) !important;
+    background-color: rgba(255,241,223,1);
+    min-width: 150px;
+    /* background: linear-gradient(to bottom, #fff1e0 0%, #e9decf 100%) !important; */
+}
+
+.disabled{
+    opacity: .15 !important;
+
+}
+
+.disabled input, .afterButton.disabled{
+    pointer-events: none;
+}
+
+.disableInactive{
+    opacity: .15 !important;
+    pointer-events: none;
+}
+
+.noDisplay{
+    display: none;
+}
+
+.icons:hover{
+    /* background-color: rgba(0,0,0,.15); */
+    color: $completedColor;
+    border: solid 4px $completedColor !important;
+    /* background: linear-gradient(to bottom, #fff1e0 0%, #e9decf 100%) !important; */
+}
+
+.icons:active, .iconActive{
+    color: $completedFontColor !important;
+    background-color: $completedColor !important;
+    border: solid 4px rgba(0,0,0,.15) !important;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+}
+
+.iconActive:hover{
+    border: solid 4px rgba(0,0,0,.15) !important;
+}
+
+.icon-borderAdjust{
+    border-radius: 10px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.iconTitle{
+    position: relative; /* for animation */
+    margin-top: 10px;
+    font-family: $benton;
+    font-weight: bold !important;
+    font-size: 16px;
+}
+
+.iconFT{
+    font-family: 'ft-icons';
+    font-size: 24px;
+}
+
+.iconGraph{
+    font-family: 'graph-icons' !important;
+}
+
+#resetIcons{
+    display: none;
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 8px;
+    text-align: center;
+    clear: both;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+
+    span:hover{
+        color: $completedColor;
+    }
+}
+
+#resetIcons.enabled{
+    display: block;
+}
+
+.stepNumber{
+    color: #9b164f;
+    font-family: $arial;
+    width: 25px;
+    overflow: hidden;
+    float: left;
+}
+
+.sectionDivider{
+    clear:both;
+    width: 100%;
+    height: 4px;
+    background: $ftColorPink;
+    margin-bottom: 4px;
+}
+
+input[type="radio"]{
+    border-width: 0;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 0px 0px $marginFromLeft;
+    cursor: pointer !important;
+    border: 0;
+
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    -khtml-opacity: 0;
+    opacity: 0;
+
+    @extend .disableTap;
+}
+
+input[type="radio"] + .radioCircle{ /*the span element that immediately follow the radio button */
+    background-color: rgba(0,0,0,0);
+    display: inline-block;
+    position: relative;
+    margin-right: 5px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border: 4px solid rgba(0,0,0,.15);
+    border-radius: 10px !important;
+}
+
+input[type="radio"] + .radioCircle{
+    background-color: rgba(0,0,0,0);
+}
+
+input[type="radio"]:hover + .radioCircle{
+    border: 4px solid $completedColor !important;
+}
+
+input[type="radio"]:checked + .radioCircle{
+    background-color: $completedColor;
+    border: 4px solid rgba(0,0,0,.15) !important;
+}
+
+input[type="text"]{
+    min-width: 275px;
+    border-width: 0;
+    text-align: left;
+    cursor: pointer !important;
+    border: solid 4px rgba(0,0,0,.15);
+    background-color: $ftColorPink;
+    border-radius: 10px !important;
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding: 10px;
+
+    font-family: $benton;
+    color: rgba(0,0,0,.5);
+    font-weight: bold;
+    font-size: 16px;
+
+    @extend .disableTap;
+}
+
+input[type="text"].untouched{
+    color: rgba(0,0,0,.15);
+    margin-bottom: 10px;
+}
+
+input[type="text"].active, textarea.active{
+    background-color: $completedColor;
+    color: $completedFontColor !important;
+    border: solid 4px rgba(0,0,0,.15) !important;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:hover, input[type="text"]:focus, textarea:hover{
+    border: 4px solid $completedColor;
+}
+
+input[type="text"].activeInput{
+    color: $completedFontColor;
+    background-color: $completedColor;
+    border: 4px solid rgba(0,0,0,.15) !important;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+}
+
+input[type="file"]{
+    position: absolute;
+    margin-left: 25px;
+    visibility: hidden;
+}
+
+textarea{
+    width: 104px;
+    border-width: 0;
+    text-align: left;
+    cursor: pointer !important;
+    border: solid 4px rgba(0,0,0,.15);
+    background-color: $ftColorPink;
+    border-radius: 10px !important;
+
+    margin-top: 5px;
+    margin-left: 0px;
+    padding: 10px;
+
+    font-family: $benton;
+    color: rgba(0,0,0,.5);
+    font-weight: bold;
+    font-size: 16px;
+    overflow: hidden;
+    resize: none;
+    height: 38px;
+    vertical-align: top;
+    margin-bottom: 10px;
+
+    @extend .disableTap;
+}
+
+#customOptionField{
+    min-width: 180px;
+    margin-left: 10px;
+}
+
+.optionText{
+    font-family: $benton;
+    color: rgba(0,0,0,.5);
+    margin-top: 10px;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+
+.optionTextNoToggle{
+    font-family: $benton;
+    color: rgba(0,0,0,.5);
+    font-weight: bold !important;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+
+.optionText:hover, .optionText:active{
+    color: $completedColor;
+}
+
+.activeText{
+    color: $completedColor !important;
+}
+
+.largeNumberText{
+    @extend .largeNumber;
+}
+
+ul, li{
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+label{
+    cursor: pointer;
+    color: rgba(0,0,0,.5);
+    position: relative;
+    left: -13px;
+}
+
+.optionDetail{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.optionTitle{
+    font-family: $benton;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(0,0,0,.5);
+
+    @extend .optionDetail;
+}
+
+#sizeCustom{
+    display: none;
+}
+
+.inputNumber:focus, .inputNumber:active{
+    background-color: rgba(0,0,0,.05);
+}
+
+/* slider UI */
+.ui-corner-all{
+    border-radius: 0px !important;
+}
+
+.ui-widget-content{
+    margin-top: 10px;
+    /* margin-bottom: 15px; */
+    border: 0px solid rgba(0,0,0,.1);
+    background: rgba(0,0,0,.07);
+    color: $completedFontColor;
+    cursor: default;
+}
+
+.ui-slider{
+    position: relative;
+    text-align: left;
+    height: 10px;
+}
+
+.ui-slider-range{
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.ui-slider .ui-slider-range{
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+}
+
+.ui-slider .ui-slider-handle{ /* handle */
+    position: absolute;
+    z-index: 2;
+    width: 42px;
+    min-height: 16px;
+    cursor: pointer;
+    border: 4px solid rgba(0,0,0,.15);
+    background: $completedColor;
+    font-weight: bold;
+    text-align: center;
+    color: $completedFontColor;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    padding: 5px 0px 5px 0px;
+    top: -12px;
+    margin-left: -21px;
+    border-radius: 10px !important;
+
+    @extend .disableTap;
+}
+
+.ui-widget-header{ /* progress fill */
+    background: $completedColor;
+}
+
+.sliderPreTrack{
+    display: inline-block;
+    margin-left: 5px;
+    background-color: $completedColor;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 20px;
+    height: 10px;
+}
+
+.sliderPostTrack{
+    display: inline-block;
+    background-color: rgba(0,0,0,.07);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 28px;
+    height: 10px;
+}
+
+.dropDownMenuContainer{
+    display: inline-block;
+    margin-left: $marginFromLeft;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.inputContainer{
+    display: inline-block;
+    margin-left: $marginFromLeft;
+    margin-right: 0px;
+    vertical-align: top;
+}
+
+.dropDownMenu{
+    width: 100%;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: $ftColorPink;
+    color: $standardFontColor;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    border: 4px solid rgba(0,0,0,.15);
+    cursor: pointer;
+}
+
+.dropDownMenuTitle{
+    pointer-events: none;
+}
+
+.entered{
+    background-color: $completedColor;
+    color: $completedFontColor;
+}
+
+.dropDownMenu.active{
+    color: $standardFontColor !important;
+    border-radius: 0px;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    background-color: rgba(0,0,0,.1);
+    border: 4px solid rgba(0,0,0,.05);
+    border-bottom: 2px solid rgba(0,0,0,.02);
+}
+
+.dropDownArrow{
+    position: relative;
+    top:22px;
+    text-align:center;
+    padding-right:17px;
+}
+
+.dropDownArrow:after{
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-top-color: rgba(0,0,0,.5);
+    border-width: 8px;
+}
+
+.dropDownContents{
+    display: none;
+    z-index: 10;
+    position: relative;
+    max-height: 192px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    margin-right: 5px;
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    background-color: $ftColorPink;
+    color: $standardFontColor;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: .8;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    border-left: 4px solid rgba(0,0,0,.15);
+    border-right: 4px solid rgba(0,0,0,.15);
+    border-bottom: 4px solid rgba(0,0,0,.15);
+    margin-bottom: 10px;
+    margin-top: -10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropDownContents.audio{
+    max-height: none;
+}
+
+.dropDownOption{
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+}
+
+.dropDownOption:last-child{
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.dropDownOption:hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+.customCaution{
+    $benton: 'BentonSans', Georgia, 'Times New Roman', Times, serif !important;
+    font-size: 16px;
+    color: $standardFontColor;
+    border: solid 4px $completedColor !important;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.25), 0px 0px 32px rgba(0, 0, 0, 0.15);;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.cautionTitle{
+    font-size: 20px;
+    font-weight: bold;
+    color: $completedColor;
+    clear: both;
+    margin-top: 10px;
+}
+
+button.boolean{
+    font-size: inherit;
+    font-weight: bold;
+    color: inherit;
+    border: 4px solid rgba(0,0,0,0.15);
+    margin: 20px 15px 0px 15px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.05);
+    min-width: 100px;
+    cursor: pointer;
+
+    @extend .disableTap;
+}
+
+button.boolean:hover{
+    color: $completedFontColor;
+    background-color: $completedColor;
+    border: solid 4px rgba(0,0,0,.15);
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05);
+}
+
+button.boolean.inactive{
+    opacity: .15;
+}
+
+button.generateButton{
+    @extend .disableTap;
+    font-size: 16px;
+    font-weight: bold;
+    color: $standardFontColor;
+    border: 4px solid rgba(0,0,0,0.15);
+    margin-left: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    border-radius: 10px;
+    /* background-color: $ftColorMultiGreen; */
+    background-color: rgba(0,0,0,.05);
+    min-width: 100px;
+    cursor: pointer;
+}
+
+button.generateButton:hover, .fileUploadCoverup:hover{
+    color: $completedFontColor;
+    /* background-color: $ftColorMultiGreen; */
+    background-color: $completedColor;
+}
+
+button.afterButton, button.generic{
+    @extend .generateButton;
+    @extend .disableTap;
+    margin-bottom: 0px;
+}
+
+button.afterButton.downState{
+    color: $completedFontColor;
+    background-color: $completedColor;
+}
+
+a.afterButton{
+    @extend button.generateButton;
+}
+
+.fileInputHolder{
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 10px;
+    margin-top: -2px;
+}
+
+.fileUploadCoverup{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: $standardFontColor;
+    border: 4px solid rgba(0,0,0,0.15);
+    margin-left: 25px;
+    margin-right: 10px;
+    padding: 10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px rgba(255,255,255,.15), -1px -1px rgba(0,0,0,.05) !important;
+    border-radius: 10px;
+    /* background-color: $ftColorMultiGreen; */
+    background-color: rgba(0,0,0,.05);
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.fileUploadText{
+    font-size: 16px;
+    font-weight: bold;
+    color: $standardFontColor;
+    border: 4px solid rgba(0,0,0,0);
+    padding: 10px;
+    margin-left: 5px;
+    padding-top: 17px;
+
+}
+
+.scrollbar{
+    position: absolute;
+    right: 0px;
+    width: 10px;
+    background-color: rgba(0,0,0,.05);
+    border-radius: 10px;
+    z-index: 5;
+}
+
+.scrollbarHandle{
+    position: relative;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 10px;
+    /* background-color: rgba(0,0,0,.1); */
+    background-color: #d9cdbf;
+    cursor: pointer;
+    min-height: 14px;
+    border-radius: 10px;
+}
+
+.scrollbarHandle:hover, .scrollbarHandle:active{
+    background-color: rgba(0,0,0,.25);
+}
+
+.autoChart{
+    margin-left: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.15);
+}
+
+#saveChart{
+    text-decoration: none;
+}
+
+#saveChart:hover{
+
+}
+
+ul.date{
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    color: #74736c;
+    vertical-align: top;
+    float:left;
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    z-index: 1;
+}
+
+.group{
+    position: relative;
+    height: 120px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    -moz-border-radius: 10px;
+}
+
+.groupBorder{
+    position: relative;
+    display: inline-block;
+    margin: 5px 10px 5px 0px;
+    border: solid 4px rgba(0,0,0,.15);
+    border-radius: 10px;
+}
+
+.groupBorder.active{
+    border: solid 4px #c36256;
+}
+
+.groupBorder:hover{
+    border: solid 4px #c36256;
+}
+
+.selector{
+    position: absolute;
+    left: 0px;
+    background-color: rgba(0,0,0,.15);
+    width: 100%;
+    height: 25px;
+    top: 52px;
+    z-index: 0;
+}
+
+.selector.active{
+    background-color: #c36256;
+}
+
+.fadeTop{
+    position: absolute;
+    top: 0px;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,.15) 25%,rgba(0,0,0, 0) 100%); /* Chrome10+,Safari5.1+ */
+    pointer-events: none;
+    width: 117px;
+    height: 40px;
+    z-index: 15;
+    left: 0;
+    border-radius: 6px;
+}
+
+.fadeBottom{
+    position: absolute;
+    bottom: 0px;
+    background: -webkit-linear-gradient(bottom, rgba(0,0,0,.15) 25%,rgba(0,0,0, 0) 100%); /* Chrome10+,Safari5.1+ */
+    pointer-events: none;
+    width: 117px;
+    height: 40px;
+    z-index: 15;
+    left: 0;
+    border-radius: 6px;
+}
+
+ul.date li{
+    display: block;
+    position: relative;
+    margin: 0px;
+    padding: 5px;
+    list-style-type: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+ul.date li:hover{
+    color: #c36256;
+    cursor: pointer;
+}
+
+ul.date li:focus{
+    background-color: #ff0000;
+}
+
+ul.date li.active{
+    color: #222;
+}
+
+ul.date li.disabled{
+    color: rgba(0,0,0,.15);
+    pointer-events: none;
+    display: none;
+}
+
+ul.date li.mousemove:hover{
+    color: #74736c;
+}
+
+.listsHolder{
+    font-family: 'BentonSans', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #74736c;
+    width: 690px;
+    overflow: hidden;
+    position: relative
+}
+
+.treelistHolder{
+    display: inline-block;
+}
+
+.treelistHolder.disabled{
+    opacity: .25;
+    /* cursor: not-allowed !important; */
+    pointer-events: none;
+}
+
+.treelist.disabled{
+    opacity: .25;
+    /* cursor: not-allowed !important; */
+    pointer-events: none;
+}
+
+.orText{
+    display: inline-block;
+    text-align: center;
+    width: 325px;
+}
+
+.radioCheckboxHolder{
+    text-align: center;
+}
+
+.radioCheckboxHolder.disabled{
+    pointer-events: none;
+    opacity: .25;
+}
+
+#dataExamples{
+    color: $completedColor;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="checkbox"]{
+    border-width: 0;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 0px 0px -30px;
+    cursor: pointer !important;
+    border: 0;
+
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+input[type="checkbox"] + .radioCircle{ /*the span element that immediately follow the radio button */
+    background-color: rgba(0,0,0,0);
+    display: inline-block;
+    position: relative;
+    margin-right: 5px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border: 4px solid rgba(0,0,0,.15);
+    border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+}
+
+input[type="checkbox"]:hover + .radioCircle{
+    border: 4px solid #c36256 !important;
+}
+
+input[type="checkbox"]:checked + .radioCircle{
+    background-color: #c36256;
+    border: 4px solid rgba(0,0,0,.15) !important;
+}
+
+.option{
+    margin: 10px 0 10px 25px;
+}
+
+.expandContract{
+    margin-left: 10px;
+    font-size: 14px;
+    color: $completedColor;
+    cursor: pointer;
+
+    .fa{
+        font-size:14px !important;
+    }
+}
+
+#bookmark{
+    display: none;
+    float: right;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: $ftColorMultiBlue;
+    border-radius: 100%;
+    border: solid 4px rgba(0, 0, 0, 0.15) !important;
+    padding: 4px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+
+    .fa{
+        font-size: 24px;
+    }
+}
+
+#bookmark.enabled{
+    display: block;
+}

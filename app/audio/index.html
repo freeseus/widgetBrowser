@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html style="background-color: #f6e9d8">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content = "Template page"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="author" content="Your name"/>
+		<meta name="keywords" content="Interactive, Interactive feature, Interactive graphic"/>
+		
+		<title>FT audio widget</title>
+		
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	
+	<body id="FTi">
+		<div class="sideBarWidth">
+			<div class="titleCushion"></div>
+			<div class="title"></div>
+			<div class="errorMessageHolder">
+              	<div class="errorMessage"></div>
+				<div class="errorBground"></div>
+			</div>
+			
+			<div class="content">
+				<div class="audioShell">
+					<div class="audioBuffer">Buffering...</div>
+					<div class="audioPlayBtn" status="paused" play="&#9658;" pause="<div class='pauseIcon'>&#9612;&#9612;</div>">&#9658;</div>
+					<div class="audioTime"></div>
+					<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+					<div class="jp-audio-stream">
+						<div class="jp-type-single">
+							<div class="jp-gui jp-interface"></div>
+						</div>
+					</div>
+					<div class="audioProgress"></div>
+				</div>
+				<div class="audioAbout"></div>
+			</div>
+		</div>
+
+		<div id="precache"></div>
+	</body>
+	
+	<script type="text/javascript" src="js/jquery(old).min.js"></script>
+	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</html>

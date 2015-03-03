@@ -1,0 +1,171 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Widget Browser</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link href="styles/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/fa.css -->
+        <!-- endbuild -->
+    </head>
+    <body id="FTi" style="background-color:#fff1e0">
+        <div class="allScale"> <!-- fullWidth, wideWidth or narrowWidth -->
+            <div class="titleDivider"></div>
+            <div class="title">Widget Browser</div>
+            <div class="subTitle">Interactive widgets to embed in articles</div>
+            <div id="bookmark">
+                <i class="fa fa-bookmark-o"></i>
+            </div>
+            <div class="errorMessageHolder">
+                <div class="errorMessage"></div>
+                <div class="errorBground"></div>
+            </div>
+            <div class="contents" style="background-color: rgba(0,0,0,.02)">
+                <div class="content">
+                    <div class="section" id="section1">
+                        <div class="instructions">
+                            <div class="stepNumber">1</div>
+                            <span>Choose a widget to get started</span>
+                        </div>
+                        <div class="iconContainer">
+                            <!--
+                            <i class="fa fa-globe pull-left icon-border icon-borderAdjust icons disabled" enabled="false">
+                                <div class="iconTitle">Geolocation</div>
+                            </i>
+
+                            -->
+
+                            <!--
+                            <i class="pull-left icon-border icon-borderAdjust icons iconGraph">
+                                <span>;</span>
+                                <div class="iconTitle">Geolocation</div>
+                            </i>
+                            -->
+
+                            <i class="fa fa-file-audio-o pull-left icon-border icon-borderAdjust icons enabled" enabled="true">
+                                <div class="iconTitle">Custom audio</div>
+                            </i>
+
+                            <i class="fa fa-volume-up pull-left icon-border icon-borderAdjust icons enabled" enabled="true">
+                                <div class="iconTitle">Podcast</div>
+                            </i>
+
+                            <i class="fa fa-bar-chart-o pull-left icon-border icon-borderAdjust icons" enabled="true">
+                                <div class="iconTitle">FRED chart</div>
+                            </i>
+                            <!--
+                            <i hoverTitle="Create a chart using bond yield data from the US Treasury" class="fa fa-bar-chart-o pull-left icon-border icon-borderAdjust icons disabled" enabled="false">
+                                <div class="iconTitle">Bond yield chart</div>
+                            </i>
+                            
+                            <i class="fa fa-comments-o pull-left icon-border icon-borderAdjust icons disabled" enabled="false">
+                                <div class="iconTitle">Visual transcript</div>
+                            </i>
+
+                            <i class="fa fa-file-text pull-left icon-border icon-borderAdjust icons disabled" enabled="false">
+                                <div class="iconTitle">PDF document</div>
+                            </i>
+                            -->
+                            <i class="fa fa fa-line-chart pull-left icon-border icon-borderAdjust icons" enabled="true">
+                                <div class="iconTitle">Dual-axis chart</div>
+                            </i>
+
+                            <i class="fa fa-pencil pull-left icon-border icon-borderAdjust icons" enabled="true">
+                                <div class="iconTitle">Custom chart</div>
+                            </i>
+
+                            <i class="fa fa fa-external-link pull-left icon-border icon-borderAdjust icons" enabled="link::http://ft.com/ig/widgets/firstFT-market-data-tool">
+                                <div class="iconTitle">Market Data Tool</div>
+                            </i>
+
+                            <i class="fa fa fa-external-link pull-left icon-border icon-borderAdjust icons" enabled="link::http://ft.com/chartbuilder">
+                                <div class="iconTitle">ChartBuilder</div>
+                            </i>
+                                                        
+                            <i class="fa fa fa-external-link pull-left icon-border icon-borderAdjust icons" enabled="link::http://editorial.ft.com/nightingale">
+                                <div class="iconTitle">Nightingale</div>
+                            </i>
+                            
+                            <div id="resetIcons"><span>- Choose a different widget -</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="documentBottomPadding" style="width:1px; height:150px"></div>
+                <!--
+                <div class="iconFT">7</div>
+                <div class="iconGraph">a b c d e f g h i j k l m n o p q r s t u v q x y z 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) ; ' [ ] { } , . / ?</div>
+                -->
+            <!--
+            <div class="footer">
+                <div id="footerContents">
+                    <div id="source"><b>Source:&nbsp;</b></div>
+                    <div id="credits"><b>Interactive:&nbsp;</b></div>
+                </div>
+            </div>-->
+        </div>
+        
+        <div class="loader">
+            <div class="loaderText">Loading</div>
+        </div>
+        <div id="precache"></div>
+        <canvas id="imageCanvas" width="1px" height="1px" style="display:none"></canvas>
+
+        <!--
+        <object style="display:block; cursor:pointer" id="copyInject" width="1" height="1" id="copy" align="middle">
+            <param name="movie" value="embed/copy.swf">
+            <param name="menu" value="false">
+            <param name="allowScriptAccess" value="always">
+        </object>
+        -->
+        <object style="float:right; display:block; cursor:pointer; opacity:0" id="copyInject" type="application/x-shockwave-flash" data="embed/copy.swf" width="1" height="1">
+            <param name="menu" value="true" />
+            <param name="allowScriptAccess" value="always" />
+        </object>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- build notes...
+            //do not change the order of canvg.js, mousewheel.js and caret.js
+            //caret.js has some build problems with grunt compiling if it's not in this order
+        -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+        <script src="bower_components/bertha.js/bertha.js"></script>
+        <script src="scripts/vendor/canvg.js"></script>
+        <script src="scripts/vendor/jquery.mousewheel.js"></script>
+        <script src="scripts/vendor/jquery.caret.js"></script>
+        
+        <script src="scripts/html.js"></script>
+        <script src="scripts/functionality.js"></script>
+        <script src="scripts/treelist.js"></script>
+        <script src="scripts/daterange.js"></script>
+        <script src="scripts/audio.js"></script>
+        <script src="scripts/dualaxis.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
+
+<!--
+
+
+<script src="scripts/html.js"></script>
+<script src="scripts/functionality.js"></script>
+<script src="scripts/treelist.js"></script>
+<script src="scripts/daterange.js"></script>
+-->
